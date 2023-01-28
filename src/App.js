@@ -26,7 +26,9 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
+        <h2>Steve Jobs ChatApp</h2>
         <textarea
+          placeholder="Ask Steve anything"
           value={message}
           onChange={(e) => {
             setMessage(e.target.value);
@@ -34,7 +36,12 @@ const App = () => {
         ></textarea>
         <button type="submit">Submit</button>
       </form>
-      <div>{response}</div>
+      {response && (
+        <div>
+          <b>Steve: </b>
+          {response}
+        </div>
+      )}
     </div>
   );
 };
